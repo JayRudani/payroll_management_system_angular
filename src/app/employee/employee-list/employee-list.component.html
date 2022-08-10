@@ -1,0 +1,43 @@
+<div class="header">
+  <h1 class="page-header">
+   All Employees Report
+  </h1>
+</div>
+<div id="page-inner">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Advanced Tables -->
+      <div class="card">
+        <div class="card-content">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover" style="font-size: 13px;">
+            <thead class="thead-dark">
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Contact No</th>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees | async">
+                <td>{{employee.employee_id}}</td>
+                <td>{{employee.employee_first_name}} {{employee.employee_last_name}}</td>
+                <td>{{employee.department_name}}</td>
+                <td>{{employee.employee_mobile}}</td>
+                <td>{{employee.employee_email}}</td>
+                <td>
+                  <a class="btn btn-sm btn-primary glyphicon glyphicon-edit" style="padding: 5px; font-size: 16px;" routerLink="/employee/update-employee/{{employee.employee_id}}"></a>&nbsp;
+                  <button class="btn btn-sm btn-danger glyphicon glyphicon-trash" (click)="deleteEmployee(employee.employee_id)" style="padding: 5px; font-size: 16px;"></button>                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+<div class="header">
+  <h1 class="page-header">
+    {{isUpdate ? "Update Employee Details": "Add New Employee"}}
+  </h1>
+</div>
+<div id="page-inner">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Advanced Tables -->
+      <div class="card">
+        <div class="card-content">
+            <form (ngSubmit)="onSubmit()" ngNativeValidate>
+              <div class="form-row">
+              <div class="col">
+                <label for="name">Title</label>
+                <select style="height: 40px;" type="text" class="form-control" name="employee_sal"
+                  [(ngModel)]="employee.employee_sal" #product_type_id="ngModel" [value]="employee.employee_sal"
+                  required>
+                  <option value="">Please Select</option>
+                  <option *ngFor='let saluation_data of saluation' [value]="saluation_data.saluation_id">
+                    {{saluation_data.saluation_name}}
+                  </option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" id="employee_first_name" required
+                  [(ngModel)]="employee.employee_first_name" name="employee_first_name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="name">Middle Name</label>
+                <input type="text" class="form-control" id="employee_middle_name" required
+                  [(ngModel)]="employee.employee_middle_name" name="employee_middle_name">
+              </div>
+
+              <div class="col">
+                <label for="name">Last Name</label>
+                <input type="text" class="form-control" id="employee_last_name" required
+                  [(ngModel)]="employee.employee_last_name" name="employee_last_name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="name">Select Department</label>
+                <select style="height: 40px;" type="text" class="form-control" name="employee_department"
+                  [(ngModel)]="employee.employee_department" #product_type_id="ngModel"
+                  [value]="employee.employee_department" required>
+                  <option value="">Please Select</option>
+                  <option *ngFor='let department of department' [value]="department.department_id">
+                    {{department.department_name}}
+                  </option>
+                </select>
+              </div>
+
+              <div class="col">
+                <label for="name">Gender</label>
+                <input type="text" class="form-control" id="employee_gender" required
+                  [(ngModel)]="employee.employee_gender" name="employee_gender">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="name">Full Address</label>
+                <input type="text" class="form-control" id="employee_address" required
+                  [(ngModel)]="employee.employee_address" name="employee_address">
+              </div>
+
+              <div class="col">
+                <label for="name">Village</label>
+                <input type="text" class="form-control" id="employee_village" required
+                  [(ngModel)]="employee.employee_village" name="employee_village">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="name">State</label>
+                <select style="height: 40px;" type="text" class="form-control" name="employee_state"
+                  [(ngModel)]="employee.employee_state" #product_type_id="ngModel" [value]="employee.employee_state"
+                  required>
+                  <option value="">Please Select</option>
+                  <option *ngFor='let state of state' [value]="state.state_id">
+                    {{state.state_name}}
+                  </option>
+                </select>
+
+              </div>
+
+              <div class="col">
+                <label for="name">Select Country</label>
+                <select style="height: 40px;" type="text" class="form-control" name="employee_country"
+                  [(ngModel)]="employee.employee_country" #product_type_id="ngModel" [value]="employee.employee_country"
+                  required>
+                  <option value="">Please Select</option>
+                  <option *ngFor='let country of country' [value]="country.country_id">
+                    {{country.country_name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+
+              <div class="col">
+                <label for="name">Landline</label>
+                <input type="text" class="form-control" id="employee_landline" required
+                  [(ngModel)]="employee.employee_landline" name="employee_landline">
+              </div>
+
+              <div class="col">
+                <label for="name">Mobile</label>
+                <input type="text" class="form-control" id="employee_mobile" required
+                  [(ngModel)]="employee.employee_mobile" name="employee_mobile">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="name">Email</label>
+                <input type="text" class="form-control" id="employee_email" required
+                  [(ngModel)]="employee.employee_email" name="employee_email">
+              </div>
+
+              <div class="col">
+                <label for="name">Status</label>
+                <input type="text" class="form-control" id="employee_status" required
+                  [(ngModel)]="employee.employee_status" name="employee_status">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="name">Date of Birth</label>
+                <input type="date" class="form-control" id="employee_dob" required [(ngModel)]="employee.employee_dob"
+                  name="employee_dob">
+              </div>
+
+              <div class="col">
+                <label for="name">Nationility</label>
+                <input type="text" class="form-control" id="employee_nationalty" required
+                  [(ngModel)]="employee.employee_nationalty" name="employee_nationalty">
+              </div>
+            </div>
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

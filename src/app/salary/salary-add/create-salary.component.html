@@ -1,0 +1,132 @@
+<div class="header">
+  <h1 class="page-header">
+    {{isUpdate ? "Update salary Details": "Add Employee salary"}}
+  </h1>
+</div>
+<div id="page-inner">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Advanced Tables -->
+      <div class="card">
+        <div class="card-content">
+          <form (ngSubmit)="onSubmit()" ngNativeValidate>
+            <div class="form-row">
+              <div class="col">
+                <label for="name">Select Employee</label>
+                <select style="height: 40px;" type="text" class="form-control" name="salary_employee_id"
+                  [(ngModel)]="salary.salary_employee_id" #product_type_id="ngModel" [value]="salary.salary_employee_id"
+                  required>
+                  <option value="0">Please Select</option>
+                  <option *ngFor='let employee_data of employee' [value]="employee_data.employee_id">
+                    {{employee_data.employee_id}}
+                  </option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="name">Select Month</label>
+                <select style="height: 40px;" type="text" class="form-control" name="salary_month"
+                  [(ngModel)]="salary.salary_month" #product_type_id="ngModel" [value]="salary.salary_month" required>
+                  <option value="0">Please Select</option>
+                  <option *ngFor='let month of month' [value]="month.month_id">
+                    {{month.month_name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div style="border: 1px dashed #b11a3f; margin: 10px;"></div>
+            <div class="form-row">
+                
+                <div class="col">
+                  <label for="name">Total Working Days</label>
+                  <input type="text" class="form-control" id="salary_working_days" required
+                    [(ngModel)]="salary.salary_working_days" name="salary_working_days">
+                </div>
+                <div class="col">
+                  <label for="name">Basic Salary</label>
+                  <input type="text" class="form-control" id="salary_basic" required [(ngModel)]="salary.salary_basic"
+                    name="salary_basic">
+                </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="name">Total HRA</label>
+                <input type="text" class="form-control" id="salary_hra" required [(ngModel)]="salary.salary_hra"
+                  name="salary_hra">
+              </div>
+              <div class="col">
+                <label for="name">Total Mediclain</label>
+                <input type="text" class="form-control" id="salary_mediclaim" required
+                  [(ngModel)]="salary.salary_mediclaim" name="salary_mediclaim">
+              </div>
+            </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="name">Travel Allowance</label>
+            <input type="text" class="form-control" id="salary_ta" required [(ngModel)]="salary.salary_ta"
+              name="salary_ta">
+          </div>
+
+          <div class="col">
+            <label for="name">Dearness Allowance</label>
+            <input type="text" class="form-control" id="salary_da" required [(ngModel)]="salary.salary_da"
+              name="salary_da">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="name">Total Reimbursement</label>
+            <input type="text" class="form-control" id="salary_reimbursement" required
+              [(ngModel)]="salary.salary_reimbursement" name="salary_reimbursement">
+          </div>
+          <div class="col">
+            <label for="name">Conveyance Allowance</label>
+            <input type="text" class="form-control" id="salary_ca" required [(ngModel)]="salary.salary_ca"
+              name="salary_ca">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="name">Others Components</label>
+            <input type="text" class="form-control" id="salary_others" required [(ngModel)]="salary.salary_others"
+              name="salary_others">
+          </div>
+
+          <div class="col">
+            <label for="name">Provident Fund</label>
+            <input type="text" class="form-control" id="salary_dpf" required [(ngModel)]="salary.salary_dpf"
+              name="salary_dpf">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="name">Total Tax</label>
+            <input type="text" class="form-control" id="salary_dtax" required [(ngModel)]="salary.salary_dtax"
+              name="salary_dtax">
+          </div>
+
+          <div class="col">
+            <label for="name">Descriptions</label>
+            <input type="text" class="form-control" id="salary_desc" required [(ngModel)]="salary.salary_desc"
+              name="salary_desc">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="name">Total Paid</label>
+            <input type="text" class="form-control" id="salary_total" required [(ngModel)]="salary.salary_total"
+              name="salary_total">
+          </div>
+
+          <div class="col">
+            <label for="name">Total Deductions</label>
+            <input type="text" class="form-control" id="salary_dedc" required [(ngModel)]="salary.salary_dedc"
+              name="salary_dedc">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
