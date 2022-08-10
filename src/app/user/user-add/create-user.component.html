@@ -1,0 +1,119 @@
+<h3>Create User</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Title</label>
+      <select style="height: 40px;" type="text" class="form-control" name="user_sal"
+        [(ngModel)]="user.user_sal" #product_type_id="ngModel" [value]="user.user_sal"
+        required>
+        <option value="0">Please Select</option>
+        <option *ngFor='let saluation_data of saluation' [value]="saluation_data.saluation_id">
+          {{saluation_data.saluation_name}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="user_first_name" required [(ngModel)]="user.user_first_name" name="user_first_name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Middle Name</label>
+      <input type="text" class="form-control" id="user_middle_name" required [(ngModel)]="user.user_middle_name" name="user_middle_name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Last Name</label>
+      <input type="text" class="form-control" id="user_last_name" required [(ngModel)]="user.user_last_name" name="user_last_name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Select Department</label>
+      <select style="height: 40px;" type="text" class="form-control" name="user_department"
+        [(ngModel)]="user.user_department" #product_type_id="ngModel" [value]="user.user_department"
+        required>
+        <option value="0">Please Select</option>
+        <option *ngFor='let department of department' [value]="department.department_id">
+          {{department.department_name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Gender</label>
+      <input type="text" class="form-control" id="user_gender" required [(ngModel)]="user.user_gender" name="user_gender">
+    </div>
+    <div class="form-group">
+      <label for="name">Full Address</label>
+      <input type="text" class="form-control" id="user_address" required [(ngModel)]="user.user_address" name="user_address">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Village</label>
+      <input type="text" class="form-control" id="user_village" required [(ngModel)]="user.user_village" name="user_village">
+    </div>
+
+    <div class="form-group">
+      <label for="name">State</label>
+      <select style="height: 40px;" type="text" class="form-control" name="user_state"
+        [(ngModel)]="user.user_state" #product_type_id="ngModel" [value]="user.user_state"
+        required>
+        <option value="0">Please Select</option>
+        <option *ngFor='let state of state' [value]="state.state_id">
+          {{state.state_name}}
+        </option>
+      </select>
+
+    </div>
+
+    <div class="form-group">
+      <label for="name">Select Country</label>
+      <select style="height: 40px;" type="text" class="form-control" name="user_country"
+        [(ngModel)]="user.user_country" #product_type_id="ngModel" [value]="user.user_country"
+        required>
+        <option value="0">Please Select</option>
+        <option *ngFor='let country of country' [value]="country.country_id">
+          {{country.country_name}}
+        </option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="name">Landline</label>
+      <input type="text" class="form-control" id="user_landline" required [(ngModel)]="user.user_landline" name="user_landline">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Mobile</label>
+      <input type="text" class="form-control" id="user_mobile" required [(ngModel)]="user.user_mobile" name="user_mobile">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input type="text" class="form-control" id="user_email" required [(ngModel)]="user.user_email" name="user_email">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Status</label>
+      <input type="text" class="form-control" id="user_status" required [(ngModel)]="user.user_status" name="user_status">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Date of Birth</label>
+      <input type="date" class="form-control" id="user_dob" required [(ngModel)]="user.user_dob" name="user_dob">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Nationility</label>
+      <input type="text" class="form-control" id="user_nationalty" required [(ngModel)]="user.user_nationalty" name="user_nationalty">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newUser()">Add</button> -->
+</div>
