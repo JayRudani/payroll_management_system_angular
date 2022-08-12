@@ -49,18 +49,18 @@
     </div>
 
     <div class="form-group">
-      <label for="name">Village</label>
-      <input type="text" class="form-control" id="user_village" required [(ngModel)]="user.user_village" name="user_village">
+      <label for="name">City</label>
+      <input type="text" class="form-control" id="user_city" required [(ngModel)]="user.user_city" name="user_city">
     </div>
 
     <div class="form-group">
-      <label for="name">State</label>
-      <select style="height: 40px;" type="text" class="form-control" name="user_state"
-        [(ngModel)]="user.user_state" #product_type_id="ngModel" [value]="user.user_state"
+      <label for="name">Province</label>
+      <select style="height: 40px;" type="text" class="form-control" name="user_province"
+        [(ngModel)]="user.user_province" #product_type_id="ngModel" [value]="user.user_province"
         required>
         <option value="0">Please Select</option>
-        <option *ngFor='let state of state' [value]="state.state_id">
-          {{state.state_name}}
+        <option *ngFor='let province of province' [value]="province.province_id">
+          {{province.province_name}}
         </option>
       </select>
 
@@ -76,12 +76,6 @@
           {{country.country_name}}
         </option>
       </select>
-    </div>
-
-
-    <div class="form-group">
-      <label for="name">Landline</label>
-      <input type="text" class="form-control" id="user_landline" required [(ngModel)]="user.user_landline" name="user_landline">
     </div>
 
     <div class="form-group">

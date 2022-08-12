@@ -68,20 +68,20 @@
               </div>
 
               <div class="col">
-                <label for="name">Village</label>
-                <input type="text" class="form-control" id="employee_village" required
-                  [(ngModel)]="employee.employee_village" name="employee_village">
+                <label for="name">City</label>
+                <input type="text" class="form-control" id="employee_city" required
+                  [(ngModel)]="employee.employee_city" name="employee_city">
               </div>
             </div>
             <div class="form-row">
               <div class="col">
-                <label for="name">State</label>
-                <select style="height: 40px;" type="text" class="form-control" name="employee_state"
-                  [(ngModel)]="employee.employee_state" #product_type_id="ngModel" [value]="employee.employee_state"
+                <label for="name">Province</label>
+                <select style="height: 40px;" type="text" class="form-control" name="employee_province"
+                  [(ngModel)]="employee.employee_province" #product_type_id="ngModel" [value]="employee.employee_province"
                   required>
                   <option value="">Please Select</option>
-                  <option *ngFor='let state of state' [value]="state.state_id">
-                    {{state.state_name}}
+                  <option *ngFor='let province of province' [value]="province.province_id">
+                    {{province.province_name}}
                   </option>
                 </select>
 
@@ -100,13 +100,6 @@
               </div>
             </div>
             <div class="form-row">
-
-              <div class="col">
-                <label for="name">Landline</label>
-                <input type="text" class="form-control" id="employee_landline" required
-                  [(ngModel)]="employee.employee_landline" name="employee_landline">
-              </div>
-
               <div class="col">
                 <label for="name">Mobile</label>
                 <input type="text" class="form-control" id="employee_mobile" required

@@ -5,29 +5,29 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class StateService {
+export class ProvinceService {
 
-  private baseUrl = 'http://127.0.0.1:8080/api/v1/states';
+  private baseUrl = 'http://127.0.0.1:8080/api/v1/province';
 
   constructor(private http: HttpClient) { }
 
-  getState(id: number): Observable<Object> {
+  getProvince(id: number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createState(state: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, state);
+  createProvince(province: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, province);
   }
 
-  updateState(id: number, value: any): Observable<Object> {
+  updateProvince(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
-  deleteState(id: number): Observable<any> {
+  deleteProvince(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  getStatesList(): Observable<any> {
+  getProvincesList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
 }

@@ -1,7 +1,4 @@
 export class Department {
-  id: number;
-  firstName: string;
-  lastName: string;
-  emailId: string;
-  active: boolean;
+  department_id: number;
+  department_name: string;
 }

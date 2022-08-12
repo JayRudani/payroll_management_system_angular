@@ -1,5 +1,4 @@
 import { UserService } from '../services/user.service';
-import { StateService } from '../../state/services/state.service';
 import { DepartmentService } from '../../department/services/department.service';
 import { CountryService } from '../../country/services/country.service';
 import { SaluationService } from '../../saluation/services/saluation.service';
@@ -7,13 +6,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 
 import { User } from '../services/user';
-import { State } from '../../state/services/state';
 import { Country } from '../../country/services/country';
 import { Department } from '../../department/services/department';
 import { Saluation } from '../../saluation/services/saluation';
 
 
 import { Component, OnInit } from '@angular/core';
+import { Province } from 'src/app/province/services/province';
+import { ProvinceService } from 'src/app/province/services/province.service';
 
 @Component({
   selector: 'app-create-user',
@@ -23,7 +23,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreateUserComponent implements OnInit {
 
   user: User = new User();
-  state: State = new State();
+  province: Province = new Province();
   country: Country = new Country();
   department: Department = new Department();
   saluation: Saluation = new Saluation();
@@ -31,7 +31,7 @@ export class CreateUserComponent implements OnInit {
   isUpdate = false;
 
   constructor(
-    private stateService: StateService,
+    private provinceService: ProvinceService,
     private countryService: CountryService,
     private departmentService: DepartmentService,
     private saluationService: SaluationService,
@@ -49,10 +49,10 @@ export class CreateUserComponent implements OnInit {
     } else {
       this.user.user_department = "0";
       this.user.user_sal = "0";
-      this.user.user_state = "0";
+      this.user.user_province = "0";
       this.user.user_country = "0";
     }
-    this.getStateOption();
+    this.getProvinceOption();
     this.getCountryOption();
     this.getSaluationOption();
     this.getDepartmentOption();
@@ -71,11 +71,11 @@ export class CreateUserComponent implements OnInit {
 
   }
   
-  getStateOption(): void {
-    this.stateService.getStatesList().subscribe(
+  getProvinceOption(): void {
+    this.provinceService.getProvincesList().subscribe(
       data => {
         console.log(data);
-        this.state = data;
+        this.province = data;
       },
       err => {
         console.log(err);

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Department } from './department';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class DepartmentService {
 
   constructor(private http: HttpClient) { }
 
-  getDepartment(id: number): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+  getDepartment(id: number): Observable<Department> {
+    return this.http.get<Department>(`${this.baseUrl}/${id}`);
   }
 
   createDepartment(department: Object): Observable<Object> {

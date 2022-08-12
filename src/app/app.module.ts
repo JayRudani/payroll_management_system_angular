@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeModule } from './employee/employee.module'
 import { SalaryModule } from './salary/salary.module'
-
-import { StateModule } from './state/state.module'
+import { ProvinceModule } from './province/province.module';
 import { UserModule } from './user/user.module'
 
 
@@ -38,7 +37,7 @@ import { MonthModule } from './month/month.module';
     FormsModule,
     HttpClientModule,
     EmployeeModule,
-    StateModule,
+    ProvinceModule,
     CountryModule,
     DepartmentModule,
     SaluationModule,

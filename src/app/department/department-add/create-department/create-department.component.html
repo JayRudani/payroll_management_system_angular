@@ -1,0 +1,28 @@
+<div class="header">
+    <h1 class="page-header">
+      {{isUpdate ? "Update department Details": "Add Employee department"}}
+    </h1>
+  </div>
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Advanced Tables -->
+        <div class="card">
+          <div class="card-content">
+            <form (ngSubmit)="onSubmit()" ngNativeValidate>
+                <div class="form-row">
+                    <div class="col">
+                      <label for="name">Department Name</label>
+                      <input type="text" class="form-control" id="department_name" required
+                      [(ngModel)]="department.department_name" name="department_name">
+                    </div>
+                  </div>
+              <div style="border: 1px dashed #b11a3f; margin: 10px;"></div>         
+          <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

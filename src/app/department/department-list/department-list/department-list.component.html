@@ -1,0 +1,37 @@
+<div class="header">
+  <h1 class="page-header">
+    Department Report
+  </h1>
+</div>
+<div id="page-inner">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Advanced Tables -->
+      <div class="card">
+        <div class="card-content">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover" style="font-size: 13px;">
+              <thead class="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let department of departments | async">
+                  <td>{{department.department_id}}</td>
+                  <td>{{department.department_name}}</td>
+                  <td>
+                    <a class="btn btn-sm btn-primary glyphicon glyphicon-edit" style="padding: 5px; font-size: 16px;" routerLink="/department/update-department/{{department.department_id}}"></a>&nbsp;
+                    <button class="btn btn-sm btn-danger glyphicon glyphicon-trash" (click)="deleteDepartment(department.department_id)" style="padding: 5px; font-size: 16px;"></button>                  
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import { EmployeeService } from '../services/employee.service';
-import { StateService } from '../../state/services/state.service';
+import { ProvinceService } from 'src/app/province/services/province.service';
 import { DepartmentService } from '../../department/services/department.service';
 import { CountryService } from '../../country/services/country.service';
 import { SaluationService } from '../../saluation/services/saluation.service';
@@ -7,13 +7,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 
 import { Employee } from '../services/employee';
-import { State } from '../../state/services/state';
 import { Country } from '../../country/services/country';
 import { Department } from '../../department/services/department';
 import { Saluation } from '../../saluation/services/saluation';
 
 
 import { Component, OnInit } from '@angular/core';
+import { Province } from 'src/app/province/services/province';
+
 
 @Component({
   selector: 'app-create-employee',
@@ -23,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreateEmployeeComponent implements OnInit {
 
   employee: Employee = new Employee();
-  state: State = new State();
+  province: Province = new Province();
   country: Country = new Country();
   department: Department = new Department();
   saluation: Saluation = new Saluation();
@@ -31,7 +32,8 @@ export class CreateEmployeeComponent implements OnInit {
   isUpdate = false;
 
   constructor(
-    private stateService: StateService,
+    private provinceService: ProvinceService,
+
     private countryService: CountryService,
     private departmentService: DepartmentService,
     private saluationService: SaluationService,
@@ -49,10 +51,10 @@ export class CreateEmployeeComponent implements OnInit {
     } else {
       this.employee.employee_department = "";
       this.employee.employee_sal = "";
-      this.employee.employee_state = "";
+      this.employee.employee_province = "";
       this.employee.employee_country = "";
     }
-    this.getStateOption();
+    this.getProvinceOption();
     this.getCountryOption();
     this.getSaluationOption();
     this.getDepartmentOption();
@@ -71,11 +73,11 @@ export class CreateEmployeeComponent implements OnInit {
 
   }
   
-  getStateOption(): void {
-    this.stateService.getStatesList().subscribe(
+  getProvinceOption(): void {
+    this.provinceService.getProvincesList().subscribe(
       data => {
         console.log(data);
-        this.state = data;
+        this.province = data;
       },
       err => {
         console.log(err);

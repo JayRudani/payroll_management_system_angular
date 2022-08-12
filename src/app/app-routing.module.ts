@@ -7,6 +7,8 @@ import { SalaryListComponent } from './salary/salary-list/salary-list.component'
 import { UserLogin } from './user/user-login/user-login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { PageLayoutComponent } from './layouts/page-layout/page-layout.component';
+import { DepartmentListComponent } from './department/department-list/department-list/department-list.component';
+import { CreateDepartmentComponent } from './department/department-add/create-department/create-department.component';
 
 
 
@@ -31,6 +33,11 @@ const routes: Routes = [
       { path: 'salary', component: SalaryListComponent },
       { path: 'salary/add', component: CreateSalaryComponent },
       { path: 'salary/update-salary/:id', component: CreateSalaryComponent },
+
+      { path: 'departments', component: DepartmentListComponent },
+      { path: 'department/add', component: CreateDepartmentComponent },
+      { path: 'department/update-department/:id', component: CreateDepartmentComponent },
+
       // { path: '**', redirectTo: '/employees', pathMatch: 'full' },
     ]
   }
